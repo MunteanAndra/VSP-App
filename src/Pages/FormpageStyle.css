@@ -1,6 +1,6 @@
-.form{
+form{
     background-color: #98BF64;
-    width: 100%;
+    flex-grow:1;
     height: 700px;
     font-size: 20px;
 }

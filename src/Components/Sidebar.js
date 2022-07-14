@@ -11,21 +11,23 @@ const Sidebar = (props) => {
     const clickHandler = () => {
         setText('Text updated');
         console.log(text);
-    }
+    };
 
     const clickHandlerForms = () => {
         navigatetoForms('/Formpage');
-    }
+    };
 
     const clickHandlerInfos = () => {
         navigatetoInfos('/Infopage');
-    }
+    };
 
     return (
     <div className='sidebar'> {text}
-        <button onClick={clickHandler}> Do something </button>
-        <button onClick={clickHandlerForms}> Go to forms </button>
-        <button onClick={clickHandlerInfos}> Go to info </button>
+        <div className="page-buttons">
+            <button onClick={clickHandler}> Do something </button>
+            <button onClick={clickHandlerForms}> Go to forms </button>
+            <button onClick={clickHandlerInfos}> Go to info </button>
+        </div>
     </div>
     );
 }
