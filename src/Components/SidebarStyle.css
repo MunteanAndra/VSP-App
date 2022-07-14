@@ -9,8 +9,8 @@
 .page-buttons{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 100px;
+    height: 150px;
     border-radius: 2px;
 }

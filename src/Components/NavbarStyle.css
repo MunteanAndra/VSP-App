@@ -4,5 +4,7 @@
     height: 70px;
     text-align: left;
     font-size: 20px;
-
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }

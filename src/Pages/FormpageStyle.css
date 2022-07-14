@@ -1,6 +1,14 @@
 form{
     background-color: #98BF64;
-    flex-grow:1;
+    flex-grow: 1;
     height: 700px;
     font-size: 20px;
+}
+
+.form_controls,.form_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
 }
