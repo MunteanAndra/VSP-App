@@ -8,8 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <Sidebar />
-        <FormPage />
+        <div style={{display:"flex"}}>
+            <Sidebar />
+            <FormPage />
+        </div>
       </header>
 
     </div>
