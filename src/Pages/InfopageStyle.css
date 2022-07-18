@@ -1,3 +1,12 @@
 .info{
     color: black;
+    background-color: #98BF64;
+    flex-grow: 1;
+}
+
+.form_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
