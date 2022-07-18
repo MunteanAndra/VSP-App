@@ -1,11 +1,11 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import './FormpageStyle.css';
 
-const FormPage = () => {
+const FormPage = (props) => {
 
-    const[enteredText,setEnteredText]=useState('');
-    const[enteredDate,setEnteredDate]=useState('');
-    const[enteredNumber,setEnteredNumber]=useState('');
+    const [enteredText,setEnteredText] = useState('');
+    const [enteredDate,setEnteredDate] = useState('');
+    const [enteredNumber,setEnteredNumber] = useState('');
 
     const textEventhandler = (event) => {
         //console.log("text changed");
@@ -35,6 +35,9 @@ const FormPage = () => {
         setEnteredText('');
         setEnteredNumber('');
         setEnteredDate('');
+
+        props.setFormData(writtenData);
+
     };
 
     return (
@@ -53,6 +56,11 @@ const FormPage = () => {
                 <input type='number' min="0.1" step="0.1" value={enteredNumber} onChange={numberEventhandler}/>
             </div>
             <button className='form_button' type='submit'>Click me</button>
+            <div className="displayed_text">
+                <div>{enteredText}</div>
+                <div>{enteredDate}</div>
+                <div>{enteredNumber}</div>
+            </div>
         </div>
     </form>
     );

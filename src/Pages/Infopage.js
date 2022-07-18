@@ -1,8 +1,11 @@
 import './InfopageStyle.css';
 
-const Info = () => {
+const Info = (props) => {
     return (
-        <div className='info'> new page </div>
+        <div>
+            <div className='info'> new page </div>
+            <div style={{color:"black"}}>{JSON.stringify(props.formdata)}</div>
+        </div>
     );
 }
 
