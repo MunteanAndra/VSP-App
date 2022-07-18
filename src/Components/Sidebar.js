@@ -30,10 +30,10 @@ const Sidebar = (props) => {
     return (
     <div className='sidebar'> {text}
         <div className="page-buttons">
-            <button onClick={clickHandler}> Do something </button>
-            <button onClick={clickHandlerForms}> Go to forms </button>
-            <button onClick={clickHandlerInfos}> Go to info </button>
-            <button onClick={clickHandlerGoals}> Go to Goals </button>
+            <button className="button1" onClick={clickHandler}> Do something </button>
+            <button className="button2" onClick={clickHandlerForms}> Go to forms </button>
+            <button className="button3" onClick={clickHandlerInfos}> Go to info </button>
+            <button className="button4" onClick={clickHandlerGoals}> Go to Goals </button>
         </div>
     </div>
     );
