@@ -41,11 +41,11 @@ const FormPage = (props) => {
     };
 
     return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className="form_style">
         <div className="form_controls">
             <div className="form_control">
                 <label>Some text</label>
-                <input type='text' value={enteredText} onChange={textEventhandler}/>
+                <input type='text' placeholder="text" value={enteredText} onChange={textEventhandler}/>
             </div>
             <div className="form_control">
                 <label>Date</label>
@@ -53,7 +53,7 @@ const FormPage = (props) => {
             </div>
             <div className="form_control">
                 <label>Some numbers</label>
-                <input type='number' min="0.1" step="0.1" value={enteredNumber} onChange={numberEventhandler}/>
+                <input type='number' placeholder="numbers" min="0.1" step="0.1" value={enteredNumber} onChange={numberEventhandler}/>
             </div>
             <button className='form_button' type='submit'>Click me</button>
             <div className="displayed_text">
