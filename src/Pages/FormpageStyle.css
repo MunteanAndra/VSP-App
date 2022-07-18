@@ -5,12 +5,22 @@
     font-size: 20px;
 }
 
-.form_controls,.form_button{
+.form_controls, .form_button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+}
 
+.form_button{
+    transition-duration: 1s;
+    border-radius: 4px;
+}
+
+.form_button:hover{
+    background-color: grey;
+    color: white;
 }
 
 .displayed_text{
