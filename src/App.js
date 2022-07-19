@@ -5,11 +5,13 @@ import Sidebar from './Components/Sidebar';
 import FormPage from './Pages/Formpage';
 import InfoPage from './Pages/Infopage';
 import Goals from './Pages/GoalsItems/Goals';
+import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
 
-   const [formdata, setFormData] = useState('');
+   const [formData, setFormData] = useState('');
+   const [formGoals, setFormGoals] = useState('');
 
   return (
     <div className = "App">
@@ -22,9 +24,14 @@ function App() {
                         element = { <FormPage setFormData = {setFormData} /> }
                     />
                     <Route path = "/Infopage"
-                        element = { <InfoPage formdata = {formdata} /> }
+                        element = { <InfoPage formData = {formData} /> }
                     />
-                    <Route path = "/Goals" element = { <Goals /> } />
+                    <Route path = "/Goals"
+                        element = { <Goals setFormGoals = {setFormGoals} /> }
+                    />
+                    <Route path = "/SeeGoals"
+                        element = { <SeeGoals formGoals = {formGoals} /> }
+                    />
                 </Routes>
         </div>
       </header>

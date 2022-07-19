@@ -4,9 +4,10 @@ import {useNavigate} from 'react-router-dom';
 
 const Sidebar = (props) => {
 
-    let navigatetoForms = useNavigate();
-    let navigatetoInfos = useNavigate();
-    let navigatetoGoals = useNavigate();
+    let navigateToForms = useNavigate();
+    let navigateToInfo = useNavigate();
+    let navigateToGoals = useNavigate();
+    let navigateToSeeGoals = useNavigate();
 
     const [text,setText] = useState(props.text);
 
@@ -16,24 +17,29 @@ const Sidebar = (props) => {
     };
 
     const clickHandlerForms = () => {
-        navigatetoForms('/Formpage');
+        navigateToForms('/Formpage');
     };
 
-    const clickHandlerInfos = () => {
-        navigatetoInfos('/Infopage');
+    const clickHandlerInfo = () => {
+        navigateToInfo('/Infopage');
     };
 
     const clickHandlerGoals = () => {
-        navigatetoGoals('/Goals');
+        navigateToGoals('/Goals');
+    };
+
+    const clickHandlerSeeGoals = () => {
+        navigateToSeeGoals('/SeeGoals');
     };
 
     return (
     <div className='sidebar'> {text}
         <div className="page-buttons">
             <button className="button1" onClick={clickHandler}> Do something </button>
-            <button className="button2" onClick={clickHandlerForms}> Go to forms </button>
-            <button className="button3" onClick={clickHandlerInfos}> Go to info </button>
-            <button className="button4" onClick={clickHandlerGoals}> Go to Goals </button>
+            <button className="button2" onClick={clickHandlerForms}> Form </button>
+            <button className="button3" onClick={clickHandlerInfo}> See info </button>
+            <button className="button4" onClick={clickHandlerGoals}> Add Goals </button>
+            <button className="button5" onClick={clickHandlerSeeGoals}> See goals </button>
         </div>
     </div>
     );
