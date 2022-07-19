@@ -16,8 +16,9 @@
 
 .button_goal{
     width: 100px;
-    background-color: #98BF64;
+    background-color: #FFAF42;
     border-radius: 5px;
+    height: 25px;
 }
 
 .optional_input{

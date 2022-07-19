@@ -1,5 +1,5 @@
 .form_style{
-    background-color: #98BF64;
+    background-color: white;
     flex-grow: 1;
     height: 700px;
     font-size: 20px;
@@ -11,16 +11,19 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    color: black;
 }
 
 .form_button{
     transition-duration: 1s;
     border-radius: 4px;
+    width: 100px;
+    height: 25px;
 }
 
 .form_button:hover{
-    background-color: grey;
-    color: white;
+    background-color: #FFAF42;
+    color: black;
 }
 
 .displayed_text{
