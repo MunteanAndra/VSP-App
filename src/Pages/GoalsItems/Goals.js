@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './GoalsStyle.css';
 import {useNavigate} from 'react-router-dom';
+import Alert from '@mui/material/Alert';
 
 const Goals = (props) => {
 
-   const[enteredValue, setEnteredValue] = useState('');
-   const[currentValue, setCurrentValue] = useState('');
-   const[optionalValue, setOptionalValue] = useState('');
-   const[currentOptionalValue, setCurrentOptionalValue] = useState('');
-   const[checked, setChecked] = useState('');
-
    let navigateToGoals = useNavigate('');
+
+   const [enteredValue, setEnteredValue] = useState('');
+   const [currentValue, setCurrentValue] = useState('');
+   const [optionalValue, setOptionalValue] = useState('');
+   const [currentOptionalValue, setCurrentOptionalValue] = useState('');
+   const [checked, setChecked] = useState('');
+   const [show,setShow] = useState(false);
 
    const goalInputHandler = (event) => {
     setEnteredValue(event.target.value);
@@ -26,7 +28,15 @@ const Goals = (props) => {
 
    const submitHandlerGoals = (event) => {
        event.preventDefault();
+
+       if(enteredValue.trim().length === 0)
+       {
+            setShow(!show);
+            return;
+       }
+
        setEnteredValue('');
+       setOptionalValue('');
        setCurrentValue(enteredValue);
        setCurrentOptionalValue(optionalValue);
 
@@ -52,6 +62,9 @@ const Goals = (props) => {
             </div>
             <div> {currentValue} </div>
             <div> {currentOptionalValue} </div>
+            <div>
+                { show && <Alert severity="warning">Write your goal !</Alert>}
+            </div>
         </form>
     );
 }
