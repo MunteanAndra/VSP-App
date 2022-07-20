@@ -11,7 +11,13 @@ import {Routes, Route} from 'react-router-dom';
 function App() {
 
    const [formData, setFormData] = useState('');
-   const [formGoals, setFormGoals] = useState('');
+   const [formGoals, setFormGoals] = useState([]);
+
+   const submitHandlerGoals = (textGoal1,textGoal2) => {
+    setFormGoals((prevGoalList) => {
+        return  [...prevGoalList, { text1: textGoal1, text2: textGoal2, id: Math.random().toString()}];
+    });
+   };
 
   return (
     <div className = "App">
@@ -27,7 +33,7 @@ function App() {
                         element = { <InfoPage formData = {formData} /> }
                     />
                     <Route path = "/Goals"
-                        element = { <Goals setFormGoals = {setFormGoals} /> }
+                        element = { <Goals setFormGoals = {submitHandlerGoals} /> }
                     />
                     <Route path = "/SeeGoals"
                         element = { <SeeGoals formGoals = {formGoals} /> }

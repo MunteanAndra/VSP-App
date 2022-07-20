@@ -40,12 +40,7 @@ const Goals = (props) => {
        setCurrentValue(enteredValue);
        setCurrentOptionalValue(optionalValue);
 
-       const bothValues = {
-        firstGoal: enteredValue,
-        secondGoal: optionalValue
-       };
-
-       props.setFormGoals(bothValues);
+       props.setFormGoals(enteredValue, optionalValue);
 
        navigateToGoals("/SeeGoals");
    }

@@ -15,6 +15,13 @@ const SeeGoals = (props) =>
                     { JSON.stringify(props.formGoals.secondGoal) }
                 </div>
             </div>
+            <ul className="unordered_list">
+                { props.formGoals.map((goal) => (
+                    <li key={goal.id}>
+                        {goal.text1} <br></br> {goal.text2}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
