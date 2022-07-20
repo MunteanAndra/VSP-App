@@ -14,9 +14,9 @@ function App() {
    const [formGoals, setFormGoals] = useState([]);
 
    const submitHandlerGoals = (textGoal1,textGoal2) => {
-    setFormGoals((prevGoalList) => {
-        return  [...prevGoalList, { text1: textGoal1, text2: textGoal2, id: Math.random().toString()}];
-    });
+    setFormGoals((prevGoalList) =>
+       ( [...prevGoalList, { text1: textGoal1, text2: textGoal2, id: Math.random().toString()}] )
+    );
    };
 
   return (

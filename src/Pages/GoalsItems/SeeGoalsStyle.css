@@ -3,11 +3,11 @@
     flex-grow: 1;
     font-size: 20px;
     margin-top: 40px;
+    margin-left: 250px;
 }
 
-.goals_card{
-
-
+.card_goals{
+    width: 700px;
 }
 
 .unordered_list{
