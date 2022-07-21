@@ -6,6 +6,7 @@ import FormPage from './Pages/Formpage';
 import InfoPage from './Pages/Infopage';
 import Goals from './Pages/GoalsItems/Goals';
 import SeeGoals from './Pages/GoalsItems/SeeGoals';
+import Login from './Components/Login';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
                     />
                     <Route path = "/SeeGoals"
                         element = { <SeeGoals formGoals = {formGoals} /> }
+                    />
+                    <Route path = "/Login"
+                        element = { <Login /> }
                     />
                 </Routes>
         </div>
