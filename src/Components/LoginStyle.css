@@ -1,4 +1,27 @@
-.login_form{
+.login{
     color: black;
     flex-grow: 1;
 }
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.input1{
+    margin-bottom: 10px;
+    height: 25px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.input2{
+    margin-bottom: 10px;
+    height: 25px;
+    width: 300px;
+    border-radius: 5px;
+}
+
