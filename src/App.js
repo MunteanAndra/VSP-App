@@ -9,6 +9,7 @@ import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import Login from './Components/Login';
 import Home from './Pages/Home';
 import Profile from './Components/Profile';
+import Settings from './Components/Settings';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -53,9 +54,8 @@ function App() {
                     <Route path = "/Home"
                         element = { <Home /> }
                     />
-                    <Route path = "/Profile"
-                        element = { <Profile /> }
-                    />
+                    <Route path = "/Profile" element = { <Profile/> } />
+                    <Route path = "/Settings" element = { <Settings/> } />
                 </Routes>
         </div>
       </header>
