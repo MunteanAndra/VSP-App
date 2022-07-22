@@ -4,11 +4,13 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { deepOrange } from '@mui/material/colors';
 import SvgIcon from '@mui/material/SvgIcon';
+import Avatar from '@mui/material/Avatar';
 
 const Navbar = () => {
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
+    let navigateToProfile = useNavigate();
 
     const clickHandlerLogin = () => {
         navigateToLogIn('/Login');
@@ -18,8 +20,11 @@ const Navbar = () => {
         navigateToHome('/Home');
     };
 
+    const clickHandlerProfile = () => {
+        navigateToProfile('/Profile');
+    }
     const CustomButton = styled(Button)(({ theme }) => ({
-      marginLeft: '1100px',
+      marginLeft: '1050px',
       color: theme.palette.getContrastText(deepOrange[500]),
     }));
 
@@ -36,6 +41,7 @@ const Navbar = () => {
             <div className='navbar_items'> <b>Real</b> Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
             <HomeIcon className="home" onClick={clickHandlerHome}/>
+            <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar>
         </div>
     );
 }

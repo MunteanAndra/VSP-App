@@ -8,6 +8,7 @@ import Goals from './Pages/GoalsItems/Goals';
 import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import Login from './Components/Login';
 import Home from './Pages/Home';
+import Profile from './Components/Profile';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
                     />
                     <Route path = "/Home"
                         element = { <Home /> }
+                    />
+                    <Route path = "/Profile"
+                        element = { <Profile /> }
                     />
                 </Routes>
         </div>
