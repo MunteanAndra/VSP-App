@@ -1,6 +1,6 @@
 import './LoginStyle.css';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Alert from '@mui/material/Alert';
 
 const Login = () => {
@@ -9,6 +9,20 @@ const Login = () => {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredPassword, setEnteredPassword] = useState('');
     const [confirm,setConfirm] = useState(false);
+
+    useEffect ( () => {
+        const identifier = setTimeout(() => {
+            console.log('Checking form validity');
+            setConfirm(
+                enteredEmail.includes('@') && enteredPassword.trim().length > 6
+            );
+        },500);
+
+        return () => {
+            console.log('CLEANUP');
+            clearTimeout(identifier);
+        };
+    }, [enteredEmail, enteredPassword]);
 
     const changeHandlerEmail = (event) => {
         setEnteredEmail(event.target.value);
