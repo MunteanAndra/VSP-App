@@ -21,7 +21,6 @@ const Login = () => {
     const submitHandlerLogin = (event) => {
 
         event.preventDefault();
-        debugger
         if(enteredEmail.trim().length === 0 || !enteredEmail.includes('@') || enteredPassword.trim().length < 6)
         {
             setConfirm(!confirm);
@@ -33,11 +32,11 @@ const Login = () => {
     return(
         <div className="login">
             <form className="login_form" onSubmit={submitHandlerLogin}>
-                <input type="text" className="input1" placeholder="email" onChange={changeHandlerEmail}/>
-                <input type="text" className="input2" placeholder="password" onChange={changeHandlerPassword}/>
+                <input type="email" id="email" className="input1" placeholder="email" onChange={changeHandlerEmail}/>
+                <input type="password" id="password" className="input2" placeholder="password" onChange={changeHandlerPassword}/>
                 <button type="submit" className="button1" > Login </button>
             </form>
-
+            { confirm && <Alert severity="warning" className="alert_form"> Your email must contain '@' and your password should be at least 6 characters long </Alert> }
         </div>
 
     );

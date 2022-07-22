@@ -14,6 +14,12 @@ function App() {
 
    const [formData, setFormData] = useState('');
    const [formGoals, setFormGoals] = useState([]);
+   //const [loggedIn, setLoggedIn] = useState(false);
+
+   //const loginHandler = (email, password) => {
+    //localStorage.setItem('isLoggedIn', 'LOGGED');
+    //setLoggedIn(true);
+   //}
 
    const submitHandlerGoals = (textGoal1,textGoal2) => {
     setFormGoals((prevGoalList) =>
