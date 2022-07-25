@@ -9,6 +9,7 @@ const Sidebar = (props) => {
     let navigateToGoals = useNavigate();
     let navigateToSeeGoals = useNavigate();
     let navigateToSettings = useNavigate();
+    let navigateToMeals = useNavigate();
 
     const [text,setText] = useState(props.text);
 
@@ -37,6 +38,10 @@ const Sidebar = (props) => {
         navigateToSettings('/Settings');
     };
 
+    const clickHandlerMeals = () => {
+        navigateToMeals('/Meals');
+    };
+
     return (
     <div className='sidebar'> {text}
         <div className="page-buttons">
@@ -45,6 +50,7 @@ const Sidebar = (props) => {
             <button className="button3" onClick={clickHandlerInfo}> See info </button>
             <button className="button4" onClick={clickHandlerGoals}> Add Goals </button>
             <button className="button5" onClick={clickHandlerSeeGoals}> See goals </button>
+            <button className="button7" onClick={clickHandlerMeals}> Order </button>
             <button className="button6" onClick={clickHandlerSettings}> Settings </button>
         </div>
     </div>

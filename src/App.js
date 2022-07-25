@@ -11,6 +11,7 @@ import Home from './Pages/Home';
 import Cart from './Components/Cart';
 import Profile from './Components/Profile';
 import Settings from './Components/Settings';
+import Meals from './Pages/Meals/Meals';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
                     <Route path = "/Profile" element = { <Profile/> } />
                     <Route path = "/Settings" element = { <Settings/> } />
                     <Route path = "/Cart" element = { <Cart/> } />
+                    <Route path = "/Meals" element = { <Meals/> } />
                 </Routes>
         </div>
       </header>

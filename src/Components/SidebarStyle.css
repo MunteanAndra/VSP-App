@@ -15,7 +15,7 @@
 
 }
 
-.button1, .button2, .button3, .button4, .button5, .button6{
+.button1, .button2, .button3, .button4, .button5, .button6, .button7{
     width: 100px;
     transition-duration: 1s;
     border-radius: 4px;
@@ -29,11 +29,13 @@
 .button3:hover,
 .button4:hover,
 .button5:hover,
-.button6:hover{
+.button6:hover,
+.button7:hover{
     background-color: #152238;
     color: white;
 }
 
+
 .button6{
-    margin-top: 400px;
+    margin-top: 370px;
 }
