@@ -8,6 +8,7 @@ import Goals from './Pages/GoalsItems/Goals';
 import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import Login from './Components/Login';
 import Home from './Pages/Home';
+import Cart from './Components/Cart';
 import Profile from './Components/Profile';
 import Settings from './Components/Settings';
 import {Routes, Route} from 'react-router-dom';
@@ -56,6 +57,7 @@ function App() {
                     />
                     <Route path = "/Profile" element = { <Profile/> } />
                     <Route path = "/Settings" element = { <Settings/> } />
+                    <Route path = "/Cart" element = { <Cart/> } />
                 </Routes>
         </div>
       </header>

@@ -5,15 +5,22 @@ import { styled } from '@mui/material/styles';
 import { deepOrange } from '@mui/material/colors';
 import SvgIcon from '@mui/material/SvgIcon';
 import Avatar from '@mui/material/Avatar';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 
 const Navbar = () => {
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
     let navigateToProfile = useNavigate();
+    let navigateToCart = useNavigate();
 
     const clickHandlerLogin = () => {
         navigateToLogIn('/Login');
+    }
+
+    const clickHandlerCart = () => {
+        navigateToCart('/Cart');
     }
 
     const clickHandlerHome = () => {
@@ -23,8 +30,9 @@ const Navbar = () => {
     const clickHandlerProfile = () => {
         navigateToProfile('/Profile');
     }
+
     const CustomButton = styled(Button)(({ theme }) => ({
-      marginLeft: '1050px',
+      marginLeft: '1000px',
       color: theme.palette.getContrastText(deepOrange[500]),
     }));
 
@@ -40,6 +48,9 @@ const Navbar = () => {
         <div className='navbar'>
             <div className='navbar_items'> <b>Real</b> Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
+            <Badge badgeContent={4} color="warning">
+                <ShoppingCartIcon className="cart" onClick={clickHandlerCart}/>
+            </Badge>
             <HomeIcon className="home" onClick={clickHandlerHome}/>
             <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar>
         </div>
