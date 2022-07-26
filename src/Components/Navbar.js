@@ -46,7 +46,7 @@ const Navbar = () => {
 
     return (
         <div className='navbar'>
-            <div className='navbar_items'> <b>Real</b> Life Sciences </div>
+            <div className='navbar_items'> Real Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
             <Badge badgeContent={4} color="warning">
                 <ShoppingCartIcon className="cart" onClick={clickHandlerCart}/>

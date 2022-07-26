@@ -24,3 +24,15 @@
 .card_meal{
     width: 200px;
 }
+
+.button8{
+    transition-duration: 1s;
+    border-radius: 4px;
+    background-color: #274472;
+    color: white;
+}
+
+.button8:hover{
+    background-color: white;
+    color: black;
+}

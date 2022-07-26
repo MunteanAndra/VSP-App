@@ -4,7 +4,7 @@
     height: 700px;
     text-align: left;
     font-size: 20px;
-    border-right: 4px solid #152238;
+    border-right: 4px solid #274472;
 }
 
 .page-buttons{
@@ -31,7 +31,7 @@
 .button5:hover,
 .button6:hover,
 .button7:hover{
-    background-color: #152238;
+    background-color: #274472;
     color: white;
 }
 

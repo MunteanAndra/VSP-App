@@ -1,4 +1,11 @@
-.home_text{
-    color: black;
+.home_page{
+    color: #274472;
     flex-grow: 1;
+    font-size: 36px;
+    margin-top: 200px;
+}
+
+.rls_photo{
+    width: 600px;
+    margin-top: 50px;
 }
