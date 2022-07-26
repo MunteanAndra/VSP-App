@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className='navbar_items'> Real Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
             <Badge badgeContent={4} color="warning">
-                <ShoppingCartIcon className="cart" onClick={clickHandlerCart}/>
+                <ShoppingCartIcon onClick={props.handleOpen} className="cart" onClick={clickHandlerCart}/>
             </Badge>
             <HomeIcon className="home" onClick={clickHandlerHome}/>
             <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar>
