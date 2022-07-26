@@ -1,3 +1,4 @@
 .meals_text{
     color: black;
+    flex-grow: 1;
 }

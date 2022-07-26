@@ -1,0 +1,26 @@
+.meal {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  width: 200px;
+}
+
+.meal_name{
+  margin: 0 0 0.25rem 0;
+}
+
+.meal_description {
+  font-style: italic;
+}
+
+.meal_price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
+
+.card_meal{
+    width: 200px;
+}

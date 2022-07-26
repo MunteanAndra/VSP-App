@@ -1,3 +1,8 @@
+import MealItem from './MealItem';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import './AvailableMealsStyle.css';
+
 const DUMMY_MEALS = [
   {
     id: 'm1',
@@ -26,11 +31,18 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) => <li>{ meal.name }</li>);
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+        key={meal.id}
+        name={meal.name}
+        description={meal.description}
+        price={meal.price}
+    />
+  ));
 
   return (
-    <div>
-      <ul>{mealsList}</ul>
+    <div className="meals">
+        <ul className="unordered_meal_list">{mealsList}</ul>
     </div>
   );
 };
