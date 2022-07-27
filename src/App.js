@@ -18,12 +18,22 @@ function App() {
 
    const [formData, setFormData] = useState('');
    const [formGoals, setFormGoals] = useState([]);
+   const [cartShown, setCartShown] = useState(true);
+
    //const [loggedIn, setLoggedIn] = useState(false);
 
    //const loginHandler = (email, password) => {
     //localStorage.setItem('isLoggedIn', 'LOGGED');
     //setLoggedIn(true);
    //}
+
+   const showCartHandler = () => {
+    setCartShown(true);
+   };
+
+   const hideCartHandler = () => {
+    setCartShown(false);
+   };
 
    const submitHandlerGoals = (textGoal1,textGoal2) => {
     setFormGoals((prevGoalList) =>
@@ -34,7 +44,8 @@ function App() {
   return (
     <div className = "App">
       <header className = "App-header">
-        <Navbar />
+        { cartShown && <Cart onClose = {hideCartHandler} /> }
+        <Navbar onShowCart = {showCartHandler} />
         <div style = {{display:"flex"}}>
             <Sidebar />
                 <Routes>
@@ -58,7 +69,6 @@ function App() {
                     />
                     <Route path = "/Profile" element = { <Profile/> } />
                     <Route path = "/Settings" element = { <Settings/> } />
-                    <Route path = "/Cart" element = { <Cart/> } />
                     <Route path = "/Meals" element = { <Meals/> } />
                 </Routes>
         </div>

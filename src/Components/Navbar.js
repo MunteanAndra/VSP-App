@@ -49,7 +49,7 @@ const Navbar = (props) => {
             <div className='navbar_items'> Real Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
             <Badge badgeContent={4} color="warning">
-                <ShoppingCartIcon onClick={props.handleOpen} className="cart" onClick={clickHandlerCart}/>
+                <ShoppingCartIcon onClick={props.onShowCart} className="cart"/>
             </Badge>
             <HomeIcon className="home" onClick={clickHandlerHome}/>
             <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar>

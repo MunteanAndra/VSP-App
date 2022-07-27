@@ -30,7 +30,7 @@ const Cart = (props) => {
                 </div>
                 <div className="actions">
                     <button>Order</button>
-                    <button>Close cart</button>
+                    <button onClick={props.onClose} > Close cart </button>
                 </div>
             </Box>
         </Modal>
