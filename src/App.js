@@ -9,6 +9,7 @@ import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import Login from './Components/Login';
 import Home from './Pages/Home';
 import Cart from './Components/Cart';
+import CartProvider from './store/CartProvider';
 import Profile from './Components/Profile';
 import Settings from './Components/Settings';
 import Meals from './Pages/Meals/Meals';

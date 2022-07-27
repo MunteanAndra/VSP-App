@@ -7,8 +7,12 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+import { useContext } from 'react';
+import CartContext from '../store/CartContext';
 
 const Navbar = (props) => {
+
+    const cartCtx = useContext(CartContext);
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
@@ -36,6 +40,10 @@ const Navbar = (props) => {
       color: theme.palette.getContrastText(deepOrange[500]),
     }));
 
+    const numberCartItems = cartCtx.items.reduce((curNumber, item) => {
+        return curNumber + item.amount;
+    },0);
+
     function HomeIcon(props) {
       return (
         <SvgIcon {...props}>
@@ -48,7 +56,7 @@ const Navbar = (props) => {
         <div className='navbar'>
             <div className='navbar_items'> Real Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
-            <Badge badgeContent={4} color="warning">
+            <Badge badgeContent={numberCartItems} color="warning">
                 <ShoppingCartIcon onClick={props.onShowCart} className="cart"/>
             </Badge>
             <HomeIcon className="home" onClick={clickHandlerHome}/>

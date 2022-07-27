@@ -21,6 +21,10 @@ const Cart = (props) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const handleOrder = () => {
+        console.log("ordering");
+    };
+
     return(
         <Modal open={handleOpen} onClose={handleClose} >
             <Box sx={style} className="cart_text">
@@ -29,7 +33,7 @@ const Cart = (props) => {
                     <div> 36.75 </div>
                 </div>
                 <div className="actions">
-                    <button>Order</button>
+                    <button onClick={handleOrder} > Order </button>
                     <button onClick={props.onClose} > Close cart </button>
                 </div>
             </Box>
