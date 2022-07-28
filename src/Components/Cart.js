@@ -43,7 +43,7 @@ const Cart = (props) => {
     return(
         <Modal open onClose={props.onClose} >
             <Box sx={style} className="cart_text">
-                <div> {cartItems} </div>
+                <div className="cart_items_details" > {cartItems} </div>
                 <div className="amount">
                     <div> Total Amount </div>
                     <div> {totalAmount} </div>

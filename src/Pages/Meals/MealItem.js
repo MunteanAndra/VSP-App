@@ -25,9 +25,11 @@ const MealItem = (props) => {
     return(
         <li className="meal">
             <Card className="card_meal">
-                <h3 className="meal_name"> {props.name} </h3>
-                <div className="meal_description"> {props.description} </div>
-                <div className="meal_price"> {price} </div>
+                <div className="item_text">
+                    <h3 className="meal_name"> {props.name} </h3>
+                    <div className="meal_description"> {props.description} </div>
+                    <div className="meal_price"> {price} </div>
+                </div>
                 <input id={'amount_' + props.id} type="number" min="1" max='5' step='1' defaultValue='1'></input>
                 <button onClick={addItem} className="button8"> Add </button>
                 {added && <Alert severity='success'> Meal was added to your cart </Alert> }
