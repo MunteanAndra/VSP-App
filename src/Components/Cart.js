@@ -17,16 +17,12 @@ const style = {
 
 const Cart = (props) => {
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
     const handleOrder = () => {
         console.log("ordering");
     };
 
     return(
-        <Modal open={handleOpen} onClose={handleClose} >
+        <Modal open onClose={props.onClose} >
             <Box sx={style} className="cart_text">
                 <div className="amount">
                     <div> Total Amount </div>

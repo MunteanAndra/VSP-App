@@ -19,14 +19,7 @@ function App() {
 
    const [formData, setFormData] = useState('');
    const [formGoals, setFormGoals] = useState([]);
-   const [cartShown, setCartShown] = useState(true);
-
-   //const [loggedIn, setLoggedIn] = useState(false);
-
-   //const loginHandler = (email, password) => {
-    //localStorage.setItem('isLoggedIn', 'LOGGED');
-    //setLoggedIn(true);
-   //}
+   const [cartShown, setCartShown] = useState(false);
 
    const showCartHandler = () => {
     setCartShown(true);
@@ -43,6 +36,7 @@ function App() {
    };
 
   return (
+  <CartProvider>
     <div className = "App">
       <header className = "App-header">
         { cartShown && <Cart onClose = {hideCartHandler} /> }
@@ -75,7 +69,7 @@ function App() {
         </div>
       </header>
     </div>
-
+  </CartProvider>
   );
 }
 

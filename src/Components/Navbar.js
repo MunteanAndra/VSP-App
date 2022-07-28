@@ -41,7 +41,7 @@ const Navbar = (props) => {
     }));
 
     const numberCartItems = cartCtx.items.reduce((curNumber, item) => {
-        return curNumber + item.amount;
+        return curNumber + +item.amount;
     },0);
 
     function HomeIcon(props) {
