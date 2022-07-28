@@ -1,7 +1,8 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import {useState} from 'react';
+import { useState, useContext } from 'react';
+import CartContext from '../store/CartContext';
 
 const style = {
   position: 'absolute',
@@ -17,16 +18,20 @@ const style = {
 
 const Cart = (props) => {
 
+    const cartCtx = useContext(CartContext);
+
     const handleOrder = () => {
         console.log("ordering");
     };
+
+    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
 
     return(
         <Modal open onClose={props.onClose} >
             <Box sx={style} className="cart_text">
                 <div className="amount">
                     <div> Total Amount </div>
-                    <div> 36.75 </div>
+                    <div> {totalAmount} </div>
                 </div>
                 <div className="actions">
                     <button onClick={handleOrder} > Order </button>
