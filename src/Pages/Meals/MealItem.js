@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import './MealItemStyle.css';
 import CartContext from '../../store/CartContext';
 import Alert from '@mui/material/Alert';

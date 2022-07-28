@@ -1,7 +1,7 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import CartContext from '../store/CartContext';
 
 const style = {

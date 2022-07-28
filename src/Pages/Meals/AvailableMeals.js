@@ -1,6 +1,4 @@
 import MealItem from './MealItem';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import './AvailableMealsStyle.css';
 
 const DUMMY_MEALS = [

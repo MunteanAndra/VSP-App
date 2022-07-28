@@ -17,14 +17,9 @@ const Navbar = (props) => {
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
     let navigateToProfile = useNavigate();
-    let navigateToCart = useNavigate();
 
     const clickHandlerLogin = () => {
         navigateToLogIn('/Login');
-    }
-
-    const clickHandlerCart = () => {
-        navigateToCart('/Cart');
     }
 
     const clickHandlerHome = () => {
