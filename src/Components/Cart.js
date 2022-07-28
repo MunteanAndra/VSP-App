@@ -28,9 +28,22 @@ const Cart = (props) => {
 
     const hasItems = cartCtx.items.length > 0;
 
+    const cartItems = (
+        <ul className="displayed_items">
+            {cartCtx.items.map((item) => (
+                <li className="item_param">
+                    {item.name}
+                    {item.amount}
+                    {item.price}
+                </li>
+            ))}
+        </ul>
+    );
+
     return(
         <Modal open onClose={props.onClose} >
             <Box sx={style} className="cart_text">
+                <div> {cartItems} </div>
                 <div className="amount">
                     <div> Total Amount </div>
                     <div> {totalAmount} </div>

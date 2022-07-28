@@ -1,4 +1,10 @@
 .cart_text{
     color: black;
     flex-grow: 1;
+    max-height: 25rem;
+    overflow: auto;
+}
+
+.displayed_items{
+     list-style-type: none;
 }
