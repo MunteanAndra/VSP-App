@@ -31,11 +31,15 @@ const Cart = (props) => {
     const cartItems = (
         <ul className="displayed_items">
             {cartCtx.items.map((item) => (
+            <div>
                 <li className="item_param">
-                    { item.name + " " }
+                    { item.name + " "}
                     { item.amount + " "}
                     { item.price }
+                    <button className="plus">+</button>
+                    <button className="minus">-</button>
                 </li>
+            </div>
             ))}
         </ul>
     );
