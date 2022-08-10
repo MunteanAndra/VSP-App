@@ -37,23 +37,25 @@ const AvailableMeals = (props) => {
     fetchMealsHandler();
   },[]);
 
-  async function fetchMealsHandler() {
+  function fetchMealsHandler() {
 
-    const response = await fetch('https://swapi.dev/api/films/');
-    const data = await response.json();
-
-    const transformedMeals = data.results.map((mealsData) => {
-        return{
-        id: mealsData.episode_id,
-        key: mealsData.episode_id,
-        name: mealsData.title,
-        description: mealsData.opening_crawl,
-        //price: mealsData.price,
-        };
-    });
-    setMeals(transformedMeals);
+    fetch('http://localhost:3000/Meals')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const transformedMeals = data.mealsList.map((mealsData) => {
+            return {
+              id: mealsData.id,
+              key: mealsData.id,
+              name: mealsData.name,
+              description: mealsData.description,
+              price: mealsData.price,
+            };
+          });
+          setMeals(transformedMeals);
+        });
   }
-
 
   return (
     <div className="meals">
@@ -63,7 +65,7 @@ const AvailableMeals = (props) => {
               key={meal.id}
               name={meal.name}
               description={meal.description}
-              //price={meal.price}
+              price={meal.price}
             />))
         }
     </div>
