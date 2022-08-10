@@ -44,6 +44,7 @@ function App() {
         <div style = {{display:"flex"}}>
             <Sidebar />
                 <Routes>
+                    <Route path = "/" element = { <Home /> } />
                     <Route path = "/Formpage"
                         element = { <FormPage setFormData = {setFormData} /> }
                     />
