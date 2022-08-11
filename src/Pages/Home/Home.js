@@ -1,5 +1,5 @@
 import './HomeStyle.css';
-import RLS_photo from '../images/Real_Life_Sciences.png';
+import RLS_photo from '../../images/Real_Life_Sciences.png';
 
 const Home = () => {
     return(

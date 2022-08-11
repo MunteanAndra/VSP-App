@@ -2,17 +2,18 @@ import './App.css';
 import React,{useState} from 'react';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
-import FormPage from './Pages/Formpage';
-import InfoPage from './Pages/Infopage';
+import FormPage from './Pages/Form/Formpage';
+import InfoPage from './Pages/Info/Infopage';
 import Goals from './Pages/GoalsItems/Goals';
 import SeeGoals from './Pages/GoalsItems/SeeGoals';
 import Login from './Components/Login';
-import Home from './Pages/Home';
+import Home from './Pages/Home/Home';
 import Cart from './Components/Cart';
 import CartProvider from './store/CartProvider';
 import Profile from './Components/Profile';
 import Settings from './Components/Settings';
 import Meals from './Pages/Meals/Meals';
+import Task from './Pages/Tasks/Task';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
                     <Route path = "/Profile" element = { <Profile/> } />
                     <Route path = "/Settings" element = { <Settings/> } />
                     <Route path = "/Meals" element = { <Meals/> } />
+                    <Route path = "/Task" element= { <Task/> } />
                 </Routes>
         </div>
       </header>
