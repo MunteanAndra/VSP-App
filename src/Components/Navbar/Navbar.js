@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { useContext } from 'react';
-import CartContext from '../store/CartContext';
+import CartContext from '../../store/CartContext';
 
 const Navbar = (props) => {
 

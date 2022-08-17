@@ -2,7 +2,7 @@ import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { useContext } from 'react';
-import CartContext from '../store/CartContext';
+import CartContext from '../../store/CartContext';
 
 const style = {
   position: 'absolute',
