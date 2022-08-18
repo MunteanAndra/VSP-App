@@ -1,9 +1,8 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { useContext } from 'react';
-import CartContext from '../../store/CartContext';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import {itemsSelector, totalAmountSelector} from "../../store/Cart";
 
 const style = {
   position: 'absolute',
@@ -19,14 +18,11 @@ const style = {
 
 const Cart = (props) => {
 
-
-    const storeItems = useSelector(state => state.cartReducer.items);
-    const storeTotalAmount = useSelector(state => state.cartReducer.totalAmount);
+    const storeItems = useSelector(state => itemsSelector(state) );
+    const storeTotalAmount = useSelector(state => totalAmountSelector(state) );
     const handleOrder = () => {
         console.log("ordering");
     };
-
-    console.log(storeItems);
 
     return(
         <Modal open onClose={props.onClose} >
@@ -34,7 +30,7 @@ const Cart = (props) => {
                 <div className="cart_items_details" >
                     <ul className="displayed_items">
                     {storeItems ? storeItems.map((item) => (
-                        <div>
+                        <div key={item.id}>
                             <li className="item_param">
                                 { item.name + " "}
                                 { item.amount + " "}

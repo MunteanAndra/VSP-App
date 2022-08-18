@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import './MealItemStyle.css';
-import CartContext from '../../store/CartContext';
 import Alert from '@mui/material/Alert';
-import { useState, useContext } from 'react';
-import {useDispatch} from "react-redux";
+import { useState } from 'react';
+import { useDispatch } from "react-redux";
+import {add, cartActions} from '../../store/Cart';
 
 const MealItem = (props) => {
 
@@ -22,7 +22,7 @@ const MealItem = (props) => {
 
 
         setAdded(!added);
-        dispatch( {type: 'ADD', item});
+        dispatch( add(item) );
     }
 
     return(

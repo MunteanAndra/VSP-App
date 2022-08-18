@@ -19,7 +19,6 @@ const Meals = (props) => {
                 return response.json();
             })
             .then((data) => {
-                console.log(data.mealsList);
                 setMeals(data.mealsList);
             });
     }

@@ -7,12 +7,10 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import { useContext } from 'react';
-import CartContext from '../../store/CartContext';
+import {useSelector} from "react-redux";
+import {totalNumberOfItems} from "../../store/Cart";
 
 const Navbar = (props) => {
-
-    const cartCtx = useContext(CartContext);
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
@@ -35,9 +33,7 @@ const Navbar = (props) => {
       color: theme.palette.getContrastText(deepOrange[500]),
     }));
 
-    const numberCartItems = cartCtx.items.reduce((curNumber, item) => {
-        return curNumber + +item.amount;
-    },0);
+    const numberCartItems = useSelector( state => totalNumberOfItems(state) );
 
     function HomeIcon(props) {
       return (
