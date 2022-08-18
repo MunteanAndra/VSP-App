@@ -37,7 +37,6 @@ function App() {
    };
 
   return (
-  <CartProvider>
     <div className = "App">
       <header className = "App-header">
         { cartShown && <Cart onClose = {hideCartHandler} /> }
@@ -72,7 +71,7 @@ function App() {
         </div>
       </header>
     </div>
-  </CartProvider>
+
   );
 }
 

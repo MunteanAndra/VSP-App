@@ -4,9 +4,11 @@ import './MealItemStyle.css';
 import CartContext from '../../store/CartContext';
 import Alert from '@mui/material/Alert';
 import { useState, useContext } from 'react';
+import {useDispatch} from "react-redux";
 
 const MealItem = (props) => {
-    const cartCtx = useContext(CartContext);
+
+    const dispatch = useDispatch();
     const price = `$${props.price.toFixed(2)}`;
     const [added, setAdded] = useState(false);
 
@@ -17,9 +19,10 @@ const MealItem = (props) => {
             price: props.price,
             amount: document.getElementById('amount_' + props.id).value
         };
-        cartCtx.addItem(item);
+
 
         setAdded(!added);
+        dispatch( {type: 'ADD', item});
     }
 
     return(

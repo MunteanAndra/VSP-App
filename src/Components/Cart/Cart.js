@@ -3,6 +3,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { useContext } from 'react';
 import CartContext from '../../store/CartContext';
+import { useSelector, useDispatch } from 'react-redux';
 
 const style = {
   position: 'absolute',
@@ -18,42 +19,41 @@ const style = {
 
 const Cart = (props) => {
 
-    const cartCtx = useContext(CartContext);
 
+    const storeItems = useSelector(state => state.cartReducer.items);
+    const storeTotalAmount = useSelector(state => state.cartReducer.totalAmount);
     const handleOrder = () => {
         console.log("ordering");
     };
 
-    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
-
-    const hasItems = cartCtx.items.length > 0;
-
-    const cartItems = (
-        <ul className="displayed_items">
-            {cartCtx.items.map((item) => (
-            <div>
-                <li className="item_param">
-                    { item.name + " "}
-                    { item.amount + " "}
-                    { item.price }
-                    <button className="plus">+</button>
-                    <button className="minus">-</button>
-                </li>
-            </div>
-            ))}
-        </ul>
-    );
+    console.log(storeItems);
 
     return(
         <Modal open onClose={props.onClose} >
             <Box sx={style} className="cart_text">
-                <div className="cart_items_details" > {cartItems} </div>
+                <div className="cart_items_details" >
+                    <ul className="displayed_items">
+                    {storeItems ? storeItems.map((item) => (
+                        <div>
+                            <li className="item_param">
+                                { item.name + " "}
+                                { item.amount + " "}
+                                { item.price }
+                                <button className="plus">+</button>
+                                <button className="minus">-</button>
+                            </li>
+                        </div>
+                    ))
+                    :
+                    <div>No items added to cart</div>}
+                </ul>
+                </div>
                 <div className="amount">
                     <div> Total Amount </div>
-                    <div> {totalAmount} </div>
+                    <div> { storeTotalAmount && `$${storeTotalAmount.toFixed(2)}`} </div>
                 </div>
                 <div className="actions">
-                    {hasItems && <button onClick={handleOrder} > Order </button>}
+                    { storeItems && storeItems.length > 0 && <button onClick={handleOrder} > Order </button>}
                     <button onClick={props.onClose} > Close cart </button>
                 </div>
             </Box>
