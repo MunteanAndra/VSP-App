@@ -2,6 +2,8 @@ import './LoginStyle.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useReducer} from 'react';
 import Alert from '@mui/material/Alert';
+import {useDispatch} from "react-redux";
+import { authActions } from '../../store/Auth';
 
 const emailReducer = (state, action) => {
     if (action.type === 'USER_INPUT') {
@@ -18,6 +20,8 @@ const passwordReducer = (state, action) => {
 };
 
 const Login = () => {
+
+    const dispatch = useDispatch();
 
     let navigateToLogin = useNavigate('');
     const [enteredEmail, setEnteredEmail] = useState('');
@@ -72,6 +76,8 @@ const Login = () => {
             return;
         }
         navigateToLogin("/Home");
+
+        dispatch(authActions.login(confirm));
     }
 
     return(

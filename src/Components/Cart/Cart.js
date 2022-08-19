@@ -1,7 +1,7 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import {itemsSelector, totalAmountSelector} from "../../store/Cart";
 
 const style = {

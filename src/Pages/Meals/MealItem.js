@@ -4,7 +4,7 @@ import './MealItemStyle.css';
 import Alert from '@mui/material/Alert';
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
-import {add, cartActions} from '../../store/Cart';
+import { add } from '../../store/Cart';
 
 const MealItem = (props) => {
 

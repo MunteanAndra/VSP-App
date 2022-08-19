@@ -14,12 +14,15 @@ import Settings from './Components/Settings/Settings';
 import Meals from './Pages/Meals/Meals';
 import Task from './Pages/Tasks/Task';
 import {Routes, Route} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {authSelector} from "./store/Auth";
 
 function App() {
 
    const [formData, setFormData] = useState('');
    const [formGoals, setFormGoals] = useState([]);
    const [cartShown, setCartShown] = useState(false);
+   const storeAuth = useSelector( state => authSelector(state));
 
    const showCartHandler = () => {
     setCartShown(true);
@@ -41,7 +44,7 @@ function App() {
         { cartShown && <Cart onClose = {hideCartHandler} /> }
         <Navbar onShowCart = {showCartHandler} />
         <div style = {{display:"flex"}}>
-            <Sidebar />
+            { storeAuth && <Sidebar /> }
                 <Routes>
                     <Route path = "/" element = { <Home /> } />
                     <Route path = "/Formpage"

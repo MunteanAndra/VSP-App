@@ -9,12 +9,15 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import {useSelector} from "react-redux";
 import {totalNumberOfItems} from "../../store/Cart";
+import {authSelector} from "../../store/Auth";
 
 const Navbar = (props) => {
 
     let navigateToLogIn = useNavigate('');
     let navigateToHome = useNavigate();
     let navigateToProfile = useNavigate();
+
+    const storeAuth = useSelector( state => authSelector(state));
 
     const clickHandlerLogin = () => {
         navigateToLogIn('/Login');
@@ -47,11 +50,13 @@ const Navbar = (props) => {
         <div className='navbar'>
             <div className='navbar_items'> Real Life Sciences </div>
             <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
-            <Badge badgeContent={numberCartItems} color="warning">
-                <ShoppingCartIcon onClick={props.onShowCart} className="cart"/>
-            </Badge>
-            <HomeIcon className="home" onClick={clickHandlerHome}/>
-            <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar>
+            { storeAuth &&
+                <Badge badgeContent={numberCartItems} color="warning">
+                    <ShoppingCartIcon onClick={props.onShowCart} className="cart"/>
+                </Badge> }
+            { storeAuth && <HomeIcon className="home" onClick={clickHandlerHome}/> }
+            { storeAuth && <Avatar className="avatar" sx={{ bggcolor: deepOrange[500], width: 36, height: 36 }} onClick={clickHandlerProfile}> AM </Avatar> }
+
         </div>
     );
 }
