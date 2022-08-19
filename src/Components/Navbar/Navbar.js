@@ -7,21 +7,27 @@ import SvgIcon from '@mui/material/SvgIcon';
 import Avatar from '@mui/material/Avatar';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {totalNumberOfItems} from "../../store/Cart";
-import {authSelector} from "../../store/Auth";
+import {authActions, authSelector} from "../../store/Auth";
 
 const Navbar = (props) => {
 
-    let navigateToLogIn = useNavigate('');
+    let navigateToLogIn = useNavigate();
     let navigateToHome = useNavigate();
     let navigateToProfile = useNavigate();
 
     const storeAuth = useSelector( state => authSelector(state));
+    const dispatch = useDispatch();
 
     const clickHandlerLogin = () => {
         navigateToLogIn('/Login');
     }
+
+    const clickHandlerLogout = () => {
+        navigateToHome('/Home');
+        dispatch(authActions.logout(false));
+    };
 
     const clickHandlerHome = () => {
         navigateToHome('/Home');
@@ -31,9 +37,14 @@ const Navbar = (props) => {
         navigateToProfile('/Profile');
     }
 
-    const CustomButton = styled(Button)(({ theme }) => ({
-      marginLeft: '1000px',
+    const CustomButton1 = styled(Button)(({ theme }) => ({
+      marginLeft: '1150px',
       color: theme.palette.getContrastText(deepOrange[500]),
+    }));
+
+    const CustomButton2 = styled(Button)(({ theme }) => ({
+        marginLeft: '1000px',
+        color: theme.palette.getContrastText(deepOrange[500]),
     }));
 
     const numberCartItems = useSelector( state => totalNumberOfItems(state) );
@@ -49,7 +60,8 @@ const Navbar = (props) => {
     return (
         <div className='navbar'>
             <div className='navbar_items'> Real Life Sciences </div>
-            <CustomButton type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton>
+            { !storeAuth && <CustomButton1 type="submit" variant="outlined" onClick={clickHandlerLogin}> Log in </CustomButton1> }
+            { storeAuth && <CustomButton2 type="submit" variant="outlined" onClick={clickHandlerLogout}> Log out </CustomButton2> }
             { storeAuth &&
                 <Badge badgeContent={numberCartItems} color="warning">
                     <ShoppingCartIcon onClick={props.onShowCart} className="cart"/>

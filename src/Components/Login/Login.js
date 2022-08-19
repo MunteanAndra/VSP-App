@@ -23,7 +23,7 @@ const Login = () => {
 
     const dispatch = useDispatch();
 
-    let navigateToLogin = useNavigate('');
+    let navigateToLogin = useNavigate();
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredPassword, setEnteredPassword] = useState('');
     const [confirm,setConfirm] = useState(false);
@@ -78,6 +78,7 @@ const Login = () => {
         navigateToLogin("/Home");
 
         dispatch(authActions.login(confirm));
+
     }
 
     return(
