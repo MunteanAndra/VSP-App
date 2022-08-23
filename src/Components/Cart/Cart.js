@@ -1,8 +1,9 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {itemsSelector, totalAmountSelector} from "../../store/Cart";
+import {removeItemFromCart, addItemInCart} from '../../store/Cart';
 
 const style = {
   position: 'absolute',
@@ -20,8 +21,22 @@ const Cart = (props) => {
 
     const storeItems = useSelector(state => itemsSelector(state) );
     const storeTotalAmount = useSelector(state => totalAmountSelector(state) );
+
+    const dispatch = useDispatch();
+
     const handleOrder = () => {
         console.log("ordering");
+    };
+
+    const addItemInCartHandler = (itemId) => {
+        dispatch(addItemInCart({
+                id: itemId
+            })
+        );
+    };
+
+    const removeItemFromCartHandler = (itemId) => {
+        dispatch(removeItemFromCart(itemId));
     };
 
     return(
@@ -29,17 +44,18 @@ const Cart = (props) => {
             <Box sx={style} className="cart_text">
                 <div className="cart_items_details" >
                     <ul className="displayed_items">
-                    {storeItems ? storeItems.map((item) => (
+                    {storeItems ? storeItems.map((item) => {
+                        return (
                         <div key={item.id}>
                             <li className="item_param">
                                 { item.name + " "}
-                                { item.amount + " "}
-                                { item.price }
-                                <button className="plus">+</button>
-                                <button className="minus">-</button>
+                                { item.quantity + " "}
+                                { item.price * item.quantity }
+                                <button onClick={() => addItemInCartHandler(item.id) } className="plus">+</button>
+                                <button onClick={() => removeItemFromCartHandler(item.id) } className="minus">-</button>
                             </li>
                         </div>
-                    ))
+                    )})
                     :
                     <div>No items added to cart</div>}
                 </ul>

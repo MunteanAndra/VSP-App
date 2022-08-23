@@ -17,9 +17,8 @@ const MealItem = (props) => {
             id: props.id,
             name: props.name,
             price: props.price,
-            amount: document.getElementById('amount_' + props.id).value
+            quantity: +document.getElementById('quantity_' + props.id).value
         };
-
 
         setAdded(!added);
         dispatch( add(item) );
@@ -33,7 +32,7 @@ const MealItem = (props) => {
                     <div className="meal_description"> {props.description} </div>
                     <div className="meal_price"> {price} </div>
                 </div>
-                <input id={'amount_' + props.id} type="number" min="1" max='5' step='1' defaultValue='1'></input>
+                <input id={'quantity_' + props.id} type="number" min='1' max='5' step='1' defaultValue='1'></input>
                 <button onClick={addItem} className="button8"> Add </button>
                 {added && <Alert severity='success'> Meal was added to your cart </Alert> }
             </Card>
