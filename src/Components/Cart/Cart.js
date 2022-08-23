@@ -44,25 +44,23 @@ const Cart = (props) => {
             <Box sx={style} className="cart_text">
                 <div className="cart_items_details" >
                     <ul className="displayed_items">
-                    {storeItems ? storeItems.map((item) => {
-                        return (
-                        <div key={item.id}>
-                            <li className="item_param">
-                                { item.name + " "}
-                                { item.quantity + " "}
-                                { item.price * item.quantity }
-                                <button onClick={() => addItemInCartHandler(item.id) } className="plus">+</button>
-                                <button onClick={() => removeItemFromCartHandler(item.id) } className="minus">-</button>
-                            </li>
-                        </div>
-                    )})
-                    :
-                    <div>No items added to cart</div>}
-                </ul>
+                        {storeItems.length ? storeItems.map((item) => (
+                            <table key={item.id}>
+                                <tr className="item_param">
+                                    <td>{ item.name + " "}</td>
+                                    <td>{ item.quantity + " "}</td>
+                                    <td>{ item.price * item.quantity }</td>
+                                    <button onClick={() => addItemInCartHandler(item.id) } className="plus">+</button>
+                                    <button onClick={() => removeItemFromCartHandler(item.id) } className="minus">-</button>
+                                </tr>
+                            </table>
+                        ))
+                        : <div> Your cart is empty, add something </div>}
+                    </ul>
                 </div>
                 <div className="amount">
-                    <div> Total Amount </div>
-                    <div> { storeTotalAmount && `$${storeTotalAmount.toFixed(2)}`} </div>
+                    { storeItems.length>0 && <div> Total Amount </div> }
+                    <div> { storeItems.length > 0 && storeTotalAmount && `$${storeTotalAmount.toFixed(2)}`} </div>
                 </div>
                 <div className="actions">
                     { storeItems && storeItems.length > 0 && <button onClick={handleOrder} > Order </button>}
