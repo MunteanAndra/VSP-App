@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useReducer} from 'react';
 import Alert from '@mui/material/Alert';
 import {useDispatch} from "react-redux";
-import { authActions } from '../../store/Auth';
+import { login } from '../../store/Auth';
 
 const emailReducer = (state, action) => {
     if (action.type === 'USER_INPUT') {
@@ -23,7 +23,7 @@ const Login = () => {
 
     const dispatch = useDispatch();
 
-    let navigateToLogin = useNavigate();
+    let navigateToHome = useNavigate();
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredPassword, setEnteredPassword] = useState('');
     const [confirm,setConfirm] = useState(false);
@@ -75,9 +75,9 @@ const Login = () => {
             setConfirm(!confirm);
             return;
         }
-        navigateToLogin("/Home");
+        navigateToHome("/Home");
 
-        dispatch(authActions.login(confirm));
+        dispatch(login(confirm));
 
     }
 
