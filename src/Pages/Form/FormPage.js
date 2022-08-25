@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './FormpageStyle.css';
+import './FormPageStyle.css';
 import {useNavigate} from 'react-router-dom';
 
 const FormPage = (props) => {

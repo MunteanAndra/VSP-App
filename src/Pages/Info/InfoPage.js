@@ -1,4 +1,4 @@
-import './InfopageStyle.css';
+import './InfoPageStyle.css';
 
 const Info = (props) => {
     return (
