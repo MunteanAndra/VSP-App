@@ -10,6 +10,7 @@ export const authSlice = createSlice({
     reducers: {
         login(state){
             state.isAuthenticated = true;
+            localStorage.setItem("token", "1234567")
         },
         logout(state){
             state.isAuthenticated = false;
@@ -17,7 +18,7 @@ export const authSlice = createSlice({
     },
 });
 
-export const authActions= authSlice.actions;
+export const {login,logout}= authSlice.actions;
 
 export const authSelector = state =>
     state.authentication.isAuthenticated;

@@ -1,4 +1,4 @@
-import MealItem from './MealItem';
+import MealItem from '../../Pages/Meals/MealItem';
 import './AvailableMealsStyle.css';
 
 const AvailableMeals = (props) => {

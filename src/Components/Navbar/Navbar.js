@@ -9,7 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import {useDispatch, useSelector} from "react-redux";
 import {totalNumberOfItems} from "../../store/Cart";
-import {authActions, authSelector} from "../../store/Auth";
+import {logout, authSelector} from "../../store/Auth";
 
 const Navbar = (props) => {
 
@@ -21,12 +21,13 @@ const Navbar = (props) => {
     const dispatch = useDispatch();
 
     const clickHandlerLogin = () => {
-        navigateToLogIn('/Login');
+        navigateToHome('/Home');
     }
 
     const clickHandlerLogout = () => {
-        navigateToHome('/Home');
-        dispatch(authActions.logout(false));
+        navigateToLogIn('/Login');
+        localStorage.removeItem("token");
+        dispatch(logout(false));
     };
 
     const clickHandlerHome = () => {

@@ -1,10 +1,10 @@
 import './MealsStyle.css';
-import AvailableMeals from './AvailableMeals';
+import AvailableMeals from '../../Components/AvailableMeals/AvailableMeals';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 
-const Meals = (props) => {
+const Meals = () => {
 
     const [meals,setMeals] = useState([]);
     const [enteredMeal,setEnteredMeal] = useState({});
@@ -27,7 +27,7 @@ const Meals = (props) => {
         setEnteredMeal({...enteredMeal, [event.target.name]: event.target.value});
     }
 
-    const submitAddMeals = (event) => {
+    const submitAddMeals = () => {
 
         const requestOptions = {
             method: 'POST',
