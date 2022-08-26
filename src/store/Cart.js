@@ -61,11 +61,15 @@ export const cartSlice = createSlice ({
         updateItemQuantity(state,action){
             const { id, quantity} = action.payload;
             state.items.find(item => item.id === id).quantity = quantity;
+        },
+
+        deleteEntireCart(state){
+            state.items.splice(0,state.items.length);
         }
     }
 });
 
-export const { add, removeItemFromCart, updateItemQuantity } = cartSlice.actions;
+export const { add, removeItemFromCart, updateItemQuantity, deleteEntireCart } = cartSlice.actions;
 
 export const itemsSelector = state =>
     state.cart.items;

@@ -1,10 +1,11 @@
 import './CartStyle.css';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import {useSelector} from 'react-redux';
-import {itemsSelector, totalAmountSelector} from "../../store/Cart";
+import {useDispatch, useSelector} from 'react-redux';
+import {deleteEntireCart, itemsSelector, totalAmountSelector} from "../../store/Cart";
 import CartItem from './CartItem';
-import React from "react";
+import React, {useState} from "react";
+import {openSnackbar} from "../../store/Snackbar";
 
 const style = {
   position: 'absolute',
@@ -20,6 +21,8 @@ const style = {
 
 const Cart = (props) => {
 
+    const dispatch = useDispatch();
+    const [sentOrder, setSentOrder] = useState(false);
     const storeItems = useSelector(state => itemsSelector(state) );
     const storeTotalAmount = useSelector(state => totalAmountSelector(state) );
 
@@ -36,6 +39,15 @@ const Cart = (props) => {
         };
 
         fetch('http://localhost:3000/Orders', requestOptions);
+        setSentOrder(true);
+        dispatch(openSnackbar(sentOrder ? "" : "Your order has been successfully saved"));
+        dispatch(deleteEntireCart());
+
+    };
+
+    const twoProps = () => {
+        handleOrder();
+        props.onSendOrder();
     };
 
     return(
@@ -62,7 +74,7 @@ const Cart = (props) => {
                     <div> { storeItems.length > 0 && storeTotalAmount && `$${storeTotalAmount.toFixed(2)}`} </div>
                 </div>
                 <div className="actions">
-                    { storeItems && storeItems.length > 0 && <button onClick={handleOrder} > Order </button>}
+                    { storeItems && storeItems.length > 0 && <button onClick = {() => twoProps()}> Order </button> }
                     <button onClick={props.onClose} > Close cart </button>
                 </div>
             </Box>
