@@ -2,3 +2,17 @@
     color: black;
     flex-grow: 1;
 }
+
+.orderCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.itemCard{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+}

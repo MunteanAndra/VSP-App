@@ -24,7 +24,18 @@ const Cart = (props) => {
     const storeTotalAmount = useSelector(state => totalAmountSelector(state) );
 
     const handleOrder = () => {
-        console.log("ordering");
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                items: storeItems.map(item => ({ ...item, totalPriceForItem: item.price * item.quantity })),
+                totalAmountOfCart: storeTotalAmount,
+            })
+        };
+
+        fetch('http://localhost:3000/Orders', requestOptions);
     };
 
     return(
@@ -47,7 +58,7 @@ const Cart = (props) => {
                         <div> Your cart is empty, add something </div>
                 }
                 <div className="amount">
-                    { storeItems.length>0 && <div> Total Amount </div> }
+                    { storeItems.length > 0 && <div> Total Amount </div> }
                     <div> { storeItems.length > 0 && storeTotalAmount && `$${storeTotalAmount.toFixed(2)}`} </div>
                 </div>
                 <div className="actions">
