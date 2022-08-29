@@ -12,10 +12,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
 }
 
-.button1, .button2, .button3, .button4, .button5, .button6, .button7, .button9{
+.button1, .button2, .button3, .button4, .button5, .button6, .button7, .button9, .button10{
     width: 100px;
     transition-duration: 1s;
     border-radius: 4px;
@@ -31,12 +30,9 @@
 .button5:hover,
 .button6:hover,
 .button7:hover,
-.button9:hover{
+.button9:hover,
+.button10:hover {
     background-color: #274472;
     color: white;
 }
 
-
-.button6{
-    margin-top: 330px;
-}

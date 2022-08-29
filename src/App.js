@@ -17,6 +17,7 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux';
 import {authSelector, login} from "./store/Auth";
 import CustomSnackbar from "./Components/CustomSnackbar";
+import IncrementLabel from "./Components/IncrementLabel";
 
 function App() {
 
@@ -81,6 +82,7 @@ function App() {
                     <Route path = "/Settings" element = { <Settings/> } />
                     <Route path = "/Meals" element = { <Meals/> } />
                     <Route path = "/Task" element= { <Task/> } />
+                    <Route path = "/IncrementLabel" element ={ <IncrementLabel/>} />
                 </Routes>
                 </>
                 :
