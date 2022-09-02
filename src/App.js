@@ -56,33 +56,34 @@ function App() {
   return (
     <div className = "App">
         { cartShown && <Cart onClose = {hideCartHandler} /> }
-        <Navbar onShowCart = {showCartHandler} />
+        <Navbar onShowCart = {showCartHandler}  />
         <div style = {{display:"flex"}}>
             { storeAuth ?
                 <>
                 <Sidebar />
                 <Routes>
-                    <Route path = "/" element = { <Home /> } />
+                    <Route path = "/"
+                           element = { <Home /> } />
                     <Route path = "/FormPage"
-                        element = { <FormPage setFormData = {setFormData} /> }
-                    />
+                           element = { <FormPage setFormData = {setFormData} /> } />
                     <Route path = "/InfoPage"
-                        element = { <InfoPage formData = {formData} /> }
-                    />
+                           element = { <InfoPage formData = {formData} /> } />
                     <Route path = "/Goals"
-                        element = { <Goals setFormGoals = {submitHandlerGoals} /> }
-                    />
+                           element = { <Goals setFormGoals = {submitHandlerGoals} /> } />
                     <Route path = "/SeeGoals"
-                        element = { <SeeGoals formGoals = {formGoals} /> }
-                    />
+                           element = { <SeeGoals formGoals = {formGoals} /> } />
                     <Route path = "/Home"
-                        element = { <Home /> }
-                    />
-                    <Route path = "/Profile" element = { <Profile/> } />
-                    <Route path = "/Settings" element = { <Settings/> } />
-                    <Route path = "/Meals" element = { <Meals/> } />
-                    <Route path = "/Task" element= { <Task/> } />
-                    <Route path = "/IncrementLabel" element ={ <IncrementLabel/>} />
+                           element = { <Home /> } />
+                    <Route path = "/Profile"
+                           element = { <Profile/> } />
+                    <Route path = "/Settings"
+                           element = { <Settings/> } />
+                    <Route path = "/Meals"
+                           element = { <Meals/> } />
+                    <Route path = "/Task"
+                           element= { <Task/> } />
+                    <Route path = "/IncrementLabel"
+                           element ={ <IncrementLabel/>} />
                 </Routes>
                 </>
                 :

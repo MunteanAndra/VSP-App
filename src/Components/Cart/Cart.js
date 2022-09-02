@@ -47,7 +47,7 @@ const Cart = (props) => {
 
     const twoProps = () => {
         handleOrder();
-        props.onSendOrder();
+        //props.onSendOrder();
     };
 
     return(

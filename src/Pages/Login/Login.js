@@ -24,8 +24,8 @@ const Login = () => {
     const dispatch = useDispatch();
 
     let navigateToHome = useNavigate();
-    const [enteredEmail, setEnteredEmail] = useState('');
-    const [enteredPassword, setEnteredPassword] = useState('');
+    const [, setEnteredEmail] = useState('');
+    const [, setEnteredPassword] = useState('');
     const [confirm,setConfirm] = useState(false);
 
     const [emailState, dispatchEmail] = useReducer(emailReducer, {

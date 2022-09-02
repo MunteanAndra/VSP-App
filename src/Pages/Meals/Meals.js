@@ -3,6 +3,7 @@ import AvailableMeals from '../../Components/AvailableMeals/AvailableMeals';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import React, {useEffect, useState} from "react";
+import SearchBar from "../../Components/SearchBar";
 
 const Meals = () => {
 
@@ -45,6 +46,7 @@ const Meals = () => {
 
     return(
         <div className="meals_text">
+            <SearchBar />
             <Card className="card_wrapper">
                 <CardContent className="new_meal">
                     <input className="meal_input" onChange={mealHandler} name="name" type="text" placeholder="Title" />
